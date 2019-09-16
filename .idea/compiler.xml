@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="txlcn-order" />
+        <module name="txlcn-user" />
+        <module name="txlcn" />
+        <module name="txlcn-money" />
+        <module name="database-txlcn-tm" />
+        <module name="enruka-server" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="database-txlcn-tm" options="-parameters" />
+      <module name="enruka-server" options="-parameters" />
+      <module name="txlcn" options="-parameters" />
+      <module name="txlcn-money" options="-parameters" />
+      <module name="txlcn-order" options="-parameters" />
+      <module name="txlcn-user" options="-parameters" />
+    </option>
+  </component>
+</project>

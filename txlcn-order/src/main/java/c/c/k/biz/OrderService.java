@@ -25,10 +25,9 @@ public class OrderService {
         Order order = new Order("order-01, moneyid:" + moneyId);
         order.setId(new Random(System.currentTimeMillis()).nextInt());
         System.out.println(order.getId());
-        if(order.getId()<0)
-            throw new IllegalStateException("addOrder exception");
         orderMapper.insert(order);
-
+//        if(order.getId()<0)
+//            throw new IllegalStateException("addOrder exception");
         userService.addUser(moneyId, order.getId());
     }
 }

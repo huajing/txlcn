@@ -8,9 +8,9 @@
         <outputRelativeToContentRoot value="true" />
         <module name="txlcn-order" />
         <module name="txlcn-user" />
-        <module name="txlcn" />
-        <module name="txlcn-money" />
         <module name="database-txlcn-tm" />
+        <module name="txlcn-money" />
+        <module name="txlcn" />
         <module name="enruka-server" />
       </profile>
     </annotationProcessing>

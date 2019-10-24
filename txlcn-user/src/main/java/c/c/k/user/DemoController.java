@@ -1,20 +1,16 @@
-package c.c.k.biz;
+package c.c.k.user;
 
-import c.c.k.http.OrderService;
-import com.codingapi.txlcn.tc.annotation.LcnTransaction;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
-import java.util.Random;
-
 
 @RestController
 public class DemoController {
     @Resource
-    private MoneyService moneyService;
+    UserService userService;
 
 
     @RequestMapping("/txlcn")
@@ -25,11 +21,9 @@ public class DemoController {
 //        return demoService.execute(value, exFlag);
     }
 
-    @GetMapping("/addMoney")
-    public String money(){
-        moneyService.addMoney();
-
-
+    @GetMapping("/addUser")
+    public String getUser(int moneyId, int orderId){
+        userService.addUser();
         return "ok";
     }
 }

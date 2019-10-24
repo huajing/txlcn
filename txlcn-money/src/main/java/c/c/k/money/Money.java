@@ -1,4 +1,4 @@
-package c.c.k.biz;
+package c.c.k.money;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 

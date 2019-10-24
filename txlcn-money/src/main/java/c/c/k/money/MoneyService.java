@@ -1,9 +1,8 @@
-package c.c.k.biz;
+package c.c.k.money;
 
 import c.c.k.http.OrderService;
 import com.codingapi.txlcn.tc.annotation.LcnTransaction;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.Random;
@@ -22,7 +21,6 @@ public class MoneyService {
     private MoneyMapper moneyMapper;
 
     @LcnTransaction
-    @Transactional
     public void addMoney(){
         Money money = new Money(123123);
         int moneyId = Math.abs(new Random(System.currentTimeMillis()).nextInt());
@@ -31,5 +29,7 @@ public class MoneyService {
         moneyMapper.insert(money);
 
         orderService.addOrder(moneyId);
+        if(new Random(System.currentTimeMillis()).nextInt()<0)
+            throw new IllegalStateException("mopney exception");
     }
 }

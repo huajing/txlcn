@@ -1,14 +1,14 @@
-package c.c.k.biz;
+package c.c.k.user;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 
-@TableName("order1")
-public class Order {
-    public Order(String name){
+@TableName(value = "user")
+public class User {
+    public User(String name){
         this.name = name;
     }
 
-    public Order(){
+    public User(){
 
     }
 

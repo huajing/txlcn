@@ -1,18 +1,17 @@
-package c.c.k.biz;
+package c.c.k.money;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
-import java.util.Random;
+
 
 @RestController
 public class DemoController {
     @Resource
-    OrderService orderService;
+    private MoneyService moneyService;
 
 
     @RequestMapping("/txlcn")
@@ -23,9 +22,11 @@ public class DemoController {
 //        return demoService.execute(value, exFlag);
     }
 
-    @GetMapping("/addOrder")
-    public String addOrder(int moneyId){
-        orderService.addOrder(moneyId);
+    @GetMapping("/addMoney")
+    public String money(){
+        moneyService.addMoney();
+
+
         return "ok";
     }
 }

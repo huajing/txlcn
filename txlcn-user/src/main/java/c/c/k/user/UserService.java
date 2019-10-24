@@ -1,7 +1,7 @@
-package c.c.k.biz;
+package c.c.k.user;
 
+import com.codingapi.txlcn.tc.annotation.LcnTransaction;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.Random;
@@ -17,12 +17,12 @@ public class UserService {
     @Resource
     UserMapper userMapper;
 
-    @Transactional
-    void addUser(int moneyId, int orderId){
-        User user = new User("abc moneyId:" + moneyId + ",orderId:" + orderId);
+    @LcnTransaction
+    void addUser(){
+        User user = new User("abc moneyId:" + 1 + ",orderId:" + 1);
         user.setId(new Random(System.currentTimeMillis()).nextInt());
-        if(user.getId()<0)
-            throw new IllegalStateException("addUser exception");
+//        if(user.getId()<0)
+//            throw new IllegalStateException("addUser exception");
         userMapper.insert(user);
     }
 }
